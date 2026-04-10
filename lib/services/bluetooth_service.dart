@@ -35,8 +35,7 @@ class BluetoothService {
   BluetoothDevice? get connectedDevice => _connectedDevice;
 
   bool get isConnected =>
-      _connectedDevice != null &&
-      _connectedDevice!.isConnected;
+      _connectedDevice?.isConnected ?? false;
 
   /// Starts BLE scan and returns a stream of discovered PostureCoach scan results
   Stream<ScanResult> scanForPostureCoach() {
